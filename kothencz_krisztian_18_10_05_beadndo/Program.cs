@@ -19,6 +19,7 @@ namespace kothencz_krisztian_18_10_05_beadndo
                 Console.Write((i + 1) + ". ");
                 szamok[i] = Convert.ToInt32(Console.ReadLine());
             }
+
             Console.WriteLine();
             Console.WriteLine("A {0} bekért szám :", tombMeret);
 
@@ -26,6 +27,7 @@ namespace kothencz_krisztian_18_10_05_beadndo
             {
                 Console.Write(item + " ");
             }
+
             Console.WriteLine();
             int max = 0;
             for (int i = 0; i < szamok.Length; i++)
@@ -37,6 +39,25 @@ namespace kothencz_krisztian_18_10_05_beadndo
                 }
             }
             Console.WriteLine("A legnagyobb szám : " + max);
+
+            int min = 0;
+            int minIndex;
+            for (int i = 0; i < szamok.Length; i++)
+            {
+                min = szamok[i];
+                minIndex = i;
+                for (int j = 0; j < szamok.Length; j++)
+                {
+                    if (szamok[j] < min)
+                    {
+                        min = szamok[j];
+                        minIndex = j;
+                    }
+                }
+                szamok[minIndex] = szamok[i];
+                szamok[i] = min;
+            }
+            Console.WriteLine("A legkisebb szám :  " + min);
             Console.ReadKey();
         }
     }
