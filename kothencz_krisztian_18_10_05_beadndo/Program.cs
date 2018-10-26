@@ -10,15 +10,17 @@ namespace kothencz_krisztian_18_10_05_beadndo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Kérem ajon meg 10 számot:  ");
-            int[] szamok = new int[10];
+            Console.Write("Kérem adja meg hány darab számot szeretne bekérni :  ");
+            int tombMeret = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Kérem adjon meg {0} db számot :", tombMeret);
+            int[] szamok = new int[tombMeret];
             for (int i = 0; i < szamok.Length; i++)
             {
                 Console.Write((i + 1) + ". ");
                 szamok[i] = Convert.ToInt32(Console.ReadLine());
             }
             Console.WriteLine();
-            Console.WriteLine("A 10 bekért szám :");
+            Console.WriteLine("A {0} bekért szám :", tombMeret);
 
             foreach (var item in szamok)
             {
